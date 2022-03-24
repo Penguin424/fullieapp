@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:flutter/foundation.dart';
 import 'package:geolocator/geolocator.dart';
 // import 'package:medirect/src/utils/locationJs.dart' if (dart.library.io) '';
 // import 'package:universal_html/js.dart';
@@ -49,7 +48,6 @@ class ToLocate {
 
     // When we reach here, permissions are granted and we can
     // continue accessing the position of the device.
-    Position? ultima = kIsWeb ? null : await Geolocator.getLastKnownPosition();
 
     // if (ultima == null) {
     //   // We don't have a position yet, so we need to get one.
@@ -71,26 +69,26 @@ class ToLocate {
   // }
 
   static double distance2coord(
-    double lat_a,
-    double lon_a,
-    double lat_b,
-    double lon_b,
+    double latA,
+    double lonA,
+    double latB,
+    double lonB,
   ) {
     double res = (acos(
           sin(
-                    lat_a * 0.01745329252,
+                    latA * 0.01745329252,
                   ) *
                   sin(
-                    lat_b * 0.01745329252,
+                    latB * 0.01745329252,
                   ) +
               (cos(
-                    lat_a * 0.01745329252,
+                    latA * 0.01745329252,
                   ) *
                   cos(
-                    lat_b * 0.01745329252,
+                    latB * 0.01745329252,
                   ) *
                   cos(
-                    lon_a * 0.01745329252 - lon_b * 0.01745329252,
+                    lonA * 0.01745329252 - lonB * 0.01745329252,
                   )),
         ) *
         57.29577951 *

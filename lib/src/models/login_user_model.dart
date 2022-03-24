@@ -684,25 +684,25 @@ class LoginUserModelUser {
     if (consultas != null) {
       final v = consultas;
       final arr0 = [];
-      v!.forEach((v) {
+      for (var v in v!) {
         arr0.add(v!.toJson());
-      });
+      }
       data['consultas'] = arr0;
     }
     if (detalleservicios != null) {
       final v = detalleservicios;
       final arr0 = [];
-      v!.forEach((v) {
+      for (var v in v!) {
         arr0.add(v!.toJson());
-      });
+      }
       data['detalleservicios'] = arr0;
     }
     if (citasPaciente != null) {
       final v = citasPaciente;
       final arr0 = [];
-      v!.forEach((v) {
+      for (var v in v!) {
         arr0.add(v!.toJson());
-      });
+      }
       data['citasPaciente'] = arr0;
     }
     return data;

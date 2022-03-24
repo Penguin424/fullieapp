@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fullieapp/src/controllers/global_controller.dart';
 import 'package:fullieapp/src/pages/home_page.dart';
@@ -5,7 +6,17 @@ import 'package:fullieapp/src/pages/loading_page.dart';
 import 'package:fullieapp/src/pages/login_page.dart';
 import 'package:get/get.dart';
 
+class AppScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+      };
+}
+
 void main() => runApp(const MyApp());
+
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -15,6 +26,7 @@ class MyApp extends StatelessWidget {
     Get.put(GloblalController());
 
     return GetMaterialApp(
+      scrollBehavior: AppScrollBehavior(),
       title: 'Material App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

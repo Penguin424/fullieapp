@@ -19,11 +19,6 @@ class GloblalController extends GetxController {
       <InstitucionDistanciaModel>[].obs;
   RxSet<Marker> markers = <Marker>{}.obs;
 
-  @override
-  void onInit() async {
-    // handleGetInitData();
-    super.onInit();
-  }
 
   handleGetInitData() async {
     final currentPosition = await ToLocate.determinePosition();
