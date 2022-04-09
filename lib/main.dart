@@ -1,10 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:fullieapp/src/controllers/global_controller.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fullieapp/src/pages/home_page.dart';
 import 'package:fullieapp/src/pages/loading_page.dart';
 import 'package:fullieapp/src/pages/login_page.dart';
-import 'package:get/get.dart';
+import 'package:fullieapp/src/pages/setting_page.dart';
 
 class AppScrollBehavior extends MaterialScrollBehavior {
   @override
@@ -14,18 +14,20 @@ class AppScrollBehavior extends MaterialScrollBehavior {
       };
 }
 
-void main() => runApp(const MyApp());
-
-
+void main() {
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Get.put(GloblalController());
-
-    return GetMaterialApp(
+    return MaterialApp(
       scrollBehavior: AppScrollBehavior(),
       title: 'Material App',
       debugShowCheckedModeBanner: false,
@@ -48,7 +50,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/loading': (context) => const LoadingPage(),
         '/login': (context) => const LoginPage(),
-        '/home': (context) => const HomePage(),
+        '/home': (context) => HomePage(),
+        '/settings': (context) => const SettingsPage(),
       },
     );
   }

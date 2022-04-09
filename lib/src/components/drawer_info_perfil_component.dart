@@ -164,10 +164,9 @@ class _DrawerInfoState extends State<DrawerInfo> {
                         color: Theme.of(context).colorScheme.primary,
                       ),
                       onTap: () {
-                        Navigator.pushNamedAndRemoveUntil(
+                        Navigator.pushNamed(
                           context,
-                          '/home',
-                          ModalRoute.withName('/'),
+                          '/settings',
                         );
                       },
                     ),
