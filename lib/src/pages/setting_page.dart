@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fullieapp/src/providers/global_provider.dart';
+import 'package:fullieapp/src/utils/preferences_utils.dart';
 
 class SettingsPage extends ConsumerStatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -14,11 +15,17 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
 
   @override
   void initState() {
+    handleGetInitData();
+
+    super.initState();
+  }
+
+  handleGetInitData() async {
+    await PreferencesUtils.init();
+
     setState(() {
       _distancia = ref.read(globalProvider).distancia;
     });
-
-    super.initState();
   }
 
   @override
@@ -62,7 +69,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                   const SizedBox(height: 16),
                   Slider(
                     value: _distancia,
-                    min: 0.0,
+                    min: 10.0,
                     max: 100,
                     divisions: 100,
                     label: '${_distancia.toInt()} km',

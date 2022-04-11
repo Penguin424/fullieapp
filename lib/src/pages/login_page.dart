@@ -361,7 +361,9 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/register');
+            },
             child: const Text(
               'Regístrate',
               style: TextStyle(

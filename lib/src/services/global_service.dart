@@ -6,6 +6,10 @@ import 'package:fullieapp/src/utils/to_tocate.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class GlobalService extends ChangeNotifier {
+  GlobalService() {
+    handleGetInitData();
+  }
+
   CameraPosition _cameraPosition = const CameraPosition(
     target: LatLng(0, 0),
     zoom: 0,
@@ -37,13 +41,15 @@ class GlobalService extends ChangeNotifier {
     notifyListeners();
   }
 
-  double _distancia = double.parse(
-    PreferencesUtils.getInteger('distancia').toString(),
-  );
+  double _distancia = PreferencesUtils.getInteger('distancia') < 10
+      ? 10
+      : double.parse(
+          PreferencesUtils.getInteger('distancia').toString(),
+        );
   double get distancia => _distancia;
   set distancia(double value) {
     _distancia = value;
-    PreferencesUtils.putInteger('ditancia', value.toInt());
+    PreferencesUtils.putInteger('distancia', value.toInt());
     handleGetInitData();
     notifyListeners();
   }
@@ -60,10 +66,6 @@ class GlobalService extends ChangeNotifier {
   set markers(Set<Marker> value) {
     _markers = value;
     notifyListeners();
-  }
-
-  GlobalService() {
-    handleGetInitData();
   }
 
   handleGetInitData() async {

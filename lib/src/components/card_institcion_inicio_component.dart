@@ -8,15 +8,17 @@ class CardInsitucionInicio extends StatelessWidget {
     Key? key,
     required this.size,
     required this.institucion,
+    required this.onTap,
   }) : super(key: key);
 
   final Size size;
   final InstitucionDistanciaModel institucion;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         padding: const EdgeInsets.all(
           10,

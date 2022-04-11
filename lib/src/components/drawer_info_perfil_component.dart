@@ -234,6 +234,7 @@ class _DrawerInfoState extends State<DrawerInfo> {
                         PreferencesUtils.putInteger('userId', 0);
                         PreferencesUtils.putString('userName', '');
                         PreferencesUtils.putString('user', '');
+                        PreferencesUtils.putInteger('distancia', 10);
 
                         Navigator.pushNamedAndRemoveUntil(
                           context,

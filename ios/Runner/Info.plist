@@ -37,6 +37,13 @@
     <string>Older devices need location.</string>
     <key>NSLocationAlwaysUsageDescription</key>
     <string>Can I have location always?</string>
+	<key>NSCameraUsageDescription</key>
+	<string>El acceso a la camara es para que puedas tomar fotos  para poder subir una foto de perfil de verificacion o para que puedas mandar fotos de algun archivo o relacionado en nuestro chat con los doctores</string>	
+	<key>NSMicrophoneUsageDescription</key>
+	<string>El acceso al microfono es por si quieres adjuntar un audio o hacer una llamada desde tu app  para poder subir mandar  un audio  en nuestro chat con los doctores</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>El acceso a la galeria es por si quieres adjuntar una imagen o archivo desde tu galeria o gestor de archivos para poder subir una foto de perfil de verificacion o para que puedas mandar fotos de algun archivo o relacionado en nuestro chat con los doctores</string>
+	
 
 
 	<key>UISupportedInterfaceOrientations</key>

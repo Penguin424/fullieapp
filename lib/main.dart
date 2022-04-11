@@ -2,8 +2,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fullieapp/src/pages/home_page.dart';
+import 'package:fullieapp/src/pages/instituciones/detalle_institucion_page.dart';
 import 'package:fullieapp/src/pages/loading_page.dart';
 import 'package:fullieapp/src/pages/login_page.dart';
+import 'package:fullieapp/src/pages/register_page.dart';
 import 'package:fullieapp/src/pages/setting_page.dart';
 
 class AppScrollBehavior extends MaterialScrollBehavior {
@@ -52,6 +54,8 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const LoginPage(),
         '/home': (context) => HomePage(),
         '/settings': (context) => const SettingsPage(),
+        '/register': (context) => const RegisterPage(),
+        '/detalle/institucion': (context) => const DetalleInstitucionPage(),
       },
     );
   }

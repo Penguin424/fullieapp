@@ -100,6 +100,12 @@ class HomePage extends ConsumerWidget {
                               return CardInsitucionInicio(
                                 size: size,
                                 institucion: institucion,
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                    context,
+                                    '/detalle/institucion',
+                                  );
+                                },
                               );
                             },
                             itemCount: providerG.instituciones.length,
@@ -118,6 +124,12 @@ class HomePage extends ConsumerWidget {
                                 child: CardInsitucionInicio(
                                   size: size,
                                   institucion: institucion,
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                      context,
+                                      '/detalle/institucion',
+                                    );
+                                  },
                                 ),
                               ),
                             )
