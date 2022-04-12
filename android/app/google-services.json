@@ -1,0 +1,92 @@
+{
+  "project_info": {
+    "project_number": "757978438389",
+    "project_id": "fullie-40469",
+    "storage_bucket": "fullie-40469.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757978438389:android:7627d0bb66ee8fcf3b03bc",
+        "android_client_info": {
+          "package_name": "com.fullieapp.fullieapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "757978438389-sa05cjedmtjipqkpuuo5umor3s4vcd1m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fullieapp.fullieapp",
+            "certificate_hash": "937bcf459cb5f1ae6ad7fad92cbeb43676c95043"
+          }
+        },
+        {
+          "client_id": "757978438389-29rrrfkosre1bf6jqhi3e2fggac6m4mu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3SvQSEiy5ikuS_1F4aaerhb3_NWLyn8U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "757978438389-29rrrfkosre1bf6jqhi3e2fggac6m4mu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757978438389:android:6f0bfbbadb047dc93b03bc",
+        "android_client_info": {
+          "package_name": "fullie.com.fullie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "757978438389-atcjtum02pmg018cm0hl2jgbscg6iikr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fullie.com.fullie",
+            "certificate_hash": "02e515d81e37182bd808fbfc7382684b6ead7f0b"
+          }
+        },
+        {
+          "client_id": "757978438389-fq5g4or0fvq03371jp7trvs4op2p8nql.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fullie.com.fullie",
+            "certificate_hash": "e2c81460c93338b3f16dac12763c65efab734f25"
+          }
+        },
+        {
+          "client_id": "757978438389-29rrrfkosre1bf6jqhi3e2fggac6m4mu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3SvQSEiy5ikuS_1F4aaerhb3_NWLyn8U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "757978438389-29rrrfkosre1bf6jqhi3e2fggac6m4mu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

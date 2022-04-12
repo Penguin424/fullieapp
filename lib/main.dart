@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -7,6 +8,7 @@ import 'package:fullieapp/src/pages/loading_page.dart';
 import 'package:fullieapp/src/pages/login_page.dart';
 import 'package:fullieapp/src/pages/register_page.dart';
 import 'package:fullieapp/src/pages/setting_page.dart';
+import 'package:fullieapp/src/providers/notifications_provider.dart';
 
 class AppScrollBehavior extends MaterialScrollBehavior {
   @override
@@ -16,23 +18,38 @@ class AppScrollBehavior extends MaterialScrollBehavior {
       };
 }
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp();
+
   runApp(
-    const ProviderScope(
+    ProviderScope(
       child: MyApp(),
     ),
   );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyApp extends ConsumerWidget {
+  MyApp({Key? key}) : super(key: key);
+
+  final _navigatorKey = GlobalKey<NavigatorState>();
+  final _scaffoldMessenger = GlobalKey<ScaffoldMessengerState>();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final notificaciones = ref.watch(notificationsPorvider);
+    notificaciones.initializeAppNotis(
+      _navigatorKey,
+      _scaffoldMessenger,
+    );
+
     return MaterialApp(
       scrollBehavior: AppScrollBehavior(),
       title: 'Material App',
       debugShowCheckedModeBanner: false,
+      scaffoldMessengerKey: _scaffoldMessenger,
+      navigatorKey: _navigatorKey,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: const Color(0XFF1EBCB8),

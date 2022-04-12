@@ -38,6 +38,33 @@
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+  
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("/firebase-messaging-sw.js");
+      });
+    }
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyB3wMCmmv1UsgflmGMeiuvP5C810kNXjwg",
+      authDomain: "fullie-40469.firebaseapp.com",
+      projectId: "fullie-40469",
+      storageBucket: "fullie-40469.appspot.com",
+      messagingSenderId: "757978438389",
+      appId: "1:757978438389:web:31e4e9552fab61333b03bc",
+      measurementId: "G-6R8SM2537M"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
   <script>
     var serviceWorkerVersion = null;
     var scriptLoaded = false;
