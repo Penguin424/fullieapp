@@ -102,6 +102,6 @@ class NotificationsService extends ChangeNotifier {
     GlobalKey<NavigatorState> navigation,
     GlobalKey<ScaffoldMessengerState> scaffoldMessenger,
   ) async {
-    navigation.currentState?.pushNamed('/detalle/institucion');
+    navigation.currentState?.pushNamed('/instituciones/detalle');
   }
 }

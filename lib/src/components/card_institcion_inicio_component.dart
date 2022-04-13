@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:fullieapp/src/models/institucion_distancia_model.dart';
+import 'package:fullieapp/src/utils/web_platform.dart';
 
 class CardInsitucionInicio extends StatelessWidget {
   const CardInsitucionInicio({
@@ -58,7 +59,9 @@ class CardInsitucionInicio extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: !kIsWeb ? size.width * 0.55 : size.width * 0.25,
+                  width: !(kIsWeb && detectMovil())
+                      ? size.width * 0.55
+                      : size.width * 0.25,
                   height: size.height * 0.15,
                   child: Column(
                     children: [

@@ -63,7 +63,7 @@ class ToLocate {
   }
 
   // static getCurrentLocation() {
-  //   if (kIsWeb) {
+  //   if ((kIsWeb && detectMovil())) {
   //     getCurrentPosition(allowInterop((pos) => success(pos)));
   //   }
   // }

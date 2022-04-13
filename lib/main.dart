@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fullieapp/src/pages/home_page.dart';
 import 'package:fullieapp/src/pages/instituciones/detalle_institucion_page.dart';
+import 'package:fullieapp/src/pages/instituciones/instituciones_page.dart';
 import 'package:fullieapp/src/pages/loading_page.dart';
 import 'package:fullieapp/src/pages/login_page.dart';
 import 'package:fullieapp/src/pages/register_page.dart';
@@ -72,7 +73,8 @@ class MyApp extends ConsumerWidget {
         '/home': (context) => HomePage(),
         '/settings': (context) => const SettingsPage(),
         '/register': (context) => const RegisterPage(),
-        '/detalle/institucion': (context) => const DetalleInstitucionPage(),
+        '/instituciones': (context) => const InstitucionesPage(),
+        '/instituciones/detalle': (context) => const DetalleInstitucionPage(),
       },
     );
   }
