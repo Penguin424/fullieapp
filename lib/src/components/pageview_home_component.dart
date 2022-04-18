@@ -52,12 +52,10 @@ class PageViewHome extends ConsumerWidget {
                 return CardInsitucionInicio(
                   size: size,
                   institucion: institucion,
-                  onTap: () {
-                    Navigator.pushNamed(
-                      context,
-                      '/instituciones/detalle',
-                    );
-                  },
+                  onTap: () => providerG.handleSelectInsitucion(
+                    context,
+                    institucion.idInsitucion ?? 1,
+                  ),
                 );
               },
               itemCount: providerG.instituciones.length,

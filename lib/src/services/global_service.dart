@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fullieapp/src/models/institucion_distancia_model.dart';
+import 'package:fullieapp/src/models/institucion_model.dart';
 import 'package:fullieapp/src/utils/http_utils.dart';
 import 'package:fullieapp/src/utils/preferences_utils.dart';
 import 'package:fullieapp/src/utils/to_tocate.dart';
@@ -68,6 +69,20 @@ class GlobalService extends ChangeNotifier {
     notifyListeners();
   }
 
+  InstitucionModel _institucionSelected = InstitucionModel();
+  InstitucionModel get institucionSelected => _institucionSelected;
+  set institucionSelected(InstitucionModel value) {
+    _institucionSelected = value;
+    notifyListeners();
+  }
+
+  bool _isInstitucionSelected = false;
+  bool get isInstitucionSelected => _isInstitucionSelected;
+  set isInstitucionSelected(bool value) {
+    _isInstitucionSelected = value;
+    notifyListeners();
+  }
+
   handleGetInitData() async {
     await PreferencesUtils.init();
 
@@ -105,5 +120,25 @@ class GlobalService extends ChangeNotifier {
     _instituciones = institucionesDB;
 
     notifyListeners();
+  }
+
+  handleSelectInsitucion(BuildContext context, int id) async {
+    try {
+      Navigator.pushNamed(context, '/instituciones/detalle');
+
+      final institucionResponse = await Http.get(
+        'instituciones/$id',
+        {},
+      );
+
+      final institucion = InstitucionModel.fromJson(institucionResponse.data);
+
+      _institucionSelected = institucion;
+      _isInstitucionSelected = true;
+
+      notifyListeners();
+    } catch (e) {
+      print(e);
+    }
   }
 }
