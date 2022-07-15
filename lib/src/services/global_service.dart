@@ -141,4 +141,11 @@ class GlobalService extends ChangeNotifier {
       print(e);
     }
   }
+
+  handleBackDetailInstitucion(BuildContext context) {
+    _isInstitucionSelected = false;
+    _institucionSelected = InstitucionModel();
+    Navigator.pop(context);
+    notifyListeners();
+  }
 }
